@@ -13,3 +13,9 @@
 >>vue add router
 >>>still proceed = y
 >>>history mode? = y
+
+> ### トラブル
+>> サイトでリロードしたりURL直接で404エラーになる  
+>>> $ touch public/_redirects  
+>>>> /* /index.html 200  
+
