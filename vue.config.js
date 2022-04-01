@@ -1,8 +1,6 @@
 module.exports = {
-  transpileDependencies: [
-    'vuetify'
-  ],
+  transpileDependencies: ["vuetify"],
   // github pages用 プロジェクト名に合わせる
-  outputDir: 'docs',
-  publicPath: '/vue-chat/'
-}
+  outputDir: "docs",
+  publicPath: "/vue-chat/",
+};
