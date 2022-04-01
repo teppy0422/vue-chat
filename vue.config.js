@@ -4,5 +4,5 @@ module.exports = {
   ],
   // github pages用
   outputDir: 'docs',
-  publicPach: './'
+  publicPath: './'
 }
