@@ -1,6 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+// import Home from "../views/Home.vue";
+import UserList from "../views/UserList.vue";
+import ChatBoard from "../views/ChatBoard.vue";
 
 Vue.use(VueRouter);
 
@@ -8,7 +10,7 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home,
+    component: UserList,
   },
   {
     path: "/about",
@@ -18,6 +20,11 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
+  },
+  {
+    path: "/chat",
+    name: "ChatBoard",
+    component: ChatBoard,
   },
 ];
 
