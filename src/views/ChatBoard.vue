@@ -33,13 +33,16 @@
         </v-row>
       </v-container>
       <v-textarea
+        v-model="body"
         append-icon="mdi-send"
         class="mx-2"
         label="メッセージを送信する"
         rows="3"
         auto-grow
       ></v-textarea>
-      <v-btn class="mr-4" @click="submit" :disable="invalid"> submit </v-btn>
+      <v-btn class="mr-4" type="submit" :disabled="invalid" @click="submit">
+        submit
+      </v-btn>
       <v-btn @click="clear"> clear </v-btn>
     </v-main>
   </v-app>
@@ -52,6 +55,7 @@ export default {
     console.log("user_id:", this.user_id);
   },
   data: () => ({
+    body: "",
     user_id: "",
     cards: ["Today"],
     drawer: null,
@@ -61,8 +65,27 @@ export default {
       ["mdi-delete", "Trash"],
       ["mdi-alert-octagon", "Spam"],
     ],
-    invalid: true,
   }),
+  computed: {
+    invalid() {
+      console.log("invalid call.");
+      if (this.body == "") {
+        return true;
+      } else {
+        console.log("else");
+      }
+      return false;
+    },
+  },
+  methods: {
+    clear() {
+      console.log("clear call.");
+      this.body = "";
+    },
+    submit() {
+      console.log("submit", this.body);
+    },
+  },
 };
 </script>
 
