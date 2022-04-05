@@ -39,6 +39,8 @@
         rows="3"
         auto-grow
       ></v-textarea>
+      <v-btn class="mr-4" @click="submit" :disable="invalid"> submit </v-btn>
+      <v-btn @click="clear"> clear </v-btn>
     </v-main>
   </v-app>
 </template>
@@ -59,6 +61,7 @@ export default {
       ["mdi-delete", "Trash"],
       ["mdi-alert-octagon", "Spam"],
     ],
+    invalid: true,
   }),
 };
 </script>
